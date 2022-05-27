@@ -1,6 +1,8 @@
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 
-export default function ImgCard({ title, description }) {
+type ImgCardProps = { title: string; description: string };
+
+export default function ImgCard({ title, description }: ImgCardProps) {
   return (
     <Card>
       <CardMedia component="img" height="200" image="/lion.jpeg" alt="lion" />

@@ -1,7 +1,7 @@
 import { Box, Container } from '@mui/material';
 import type { NextPage } from 'next';
 import { data1, data2, data3, data4, data5 } from '../src/data';
-import DynamicFlexGrid from '../src/DynamicGrid';
+import DynamicGrid from '../src/DynamicGrid';
 import ImgCard from '../src/ImgCard';
 
 const Home: NextPage = () => {
@@ -13,35 +13,35 @@ const Home: NextPage = () => {
 
   return (
     <Container>
-      <DynamicFlexGrid {...dynamicGridProps}>
+      <DynamicGrid {...dynamicGridProps}>
         {data1.map((e) => (
           <ImgCard key={e} title={e} description={e} />
         ))}
-      </DynamicFlexGrid>
+      </DynamicGrid>
       <Box p={5} />
-      <DynamicFlexGrid {...dynamicGridProps}>
+      <DynamicGrid {...dynamicGridProps}>
         {data2.map((e) => (
           <ImgCard key={e} title={e} description={e} />
         ))}
-      </DynamicFlexGrid>
+      </DynamicGrid>
       <Box p={5} />
-      <DynamicFlexGrid {...dynamicGridProps}>
+      <DynamicGrid {...dynamicGridProps}>
         {data3.map((e) => (
           <ImgCard key={e} title={e} description={e} />
         ))}
-      </DynamicFlexGrid>
+      </DynamicGrid>
       <Box p={5} />
-      <DynamicFlexGrid {...dynamicGridProps}>
+      <DynamicGrid {...dynamicGridProps}>
         {data4.map((e) => (
           <ImgCard key={e} title={e} description={e} />
         ))}
-      </DynamicFlexGrid>
+      </DynamicGrid>
       <Box p={5} />
-      <DynamicFlexGrid {...dynamicGridProps}>
+      <DynamicGrid {...dynamicGridProps}>
         {data5.map((e) => (
           <ImgCard key={e} title={e} description={e} />
         ))}
-      </DynamicFlexGrid>
+      </DynamicGrid>
     </Container>
   );
 };
