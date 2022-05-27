@@ -1,78 +1,47 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Container,
-  Typography,
-} from '@mui/material';
+import { Box, Container } from '@mui/material';
 import type { NextPage } from 'next';
-import DynamicGrid from '../src/DynamicGrid';
-
-const data1 = ['hi'];
-const data2 = ['hi', 'ho'];
-const data3 = ['hi', 'ho', 'ha'];
-const data4 = ['hi', 'ho', 'ha', 'hu'];
-const data5 = ['hi', 'ho', 'ha', 'hu', 'he'];
-
-function ImgCard({ title, description }) {
-  return (
-    <Card sx={{ maxWidth: '300px' }}>
-      <CardMedia
-        component="img"
-        height="200"
-        image="/lion.jpeg"
-        alt="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {description}
-        </Typography>
-      </CardContent>
-    </Card>
-  );
-}
+import { data1, data2, data3, data4, data5 } from '../src/data';
+import DynamicFlexGrid from '../src/DynamicGrid';
+import ImgCard from '../src/ImgCard';
 
 const Home: NextPage = () => {
   const dynamicGridProps = {
-    maxColumns: { xs: 1, sm: 2, md: 3, lg: 4 },
+    maxColumns: { xs: 1, sm: 2, md: 5, lg: 5 },
     spacing: 4,
+    fullWidth: false,
   };
 
   return (
     <Container>
-      <DynamicGrid {...dynamicGridProps}>
+      <DynamicFlexGrid {...dynamicGridProps}>
         {data1.map((e) => (
           <ImgCard key={e} title={e} description={e} />
         ))}
-      </DynamicGrid>
+      </DynamicFlexGrid>
       <Box p={5} />
-      <DynamicGrid {...dynamicGridProps}>
+      <DynamicFlexGrid {...dynamicGridProps}>
         {data2.map((e) => (
           <ImgCard key={e} title={e} description={e} />
         ))}
-      </DynamicGrid>
+      </DynamicFlexGrid>
       <Box p={5} />
-      <DynamicGrid {...dynamicGridProps}>
+      <DynamicFlexGrid {...dynamicGridProps}>
         {data3.map((e) => (
           <ImgCard key={e} title={e} description={e} />
         ))}
-      </DynamicGrid>
+      </DynamicFlexGrid>
       <Box p={5} />
-      <DynamicGrid {...dynamicGridProps}>
+      <DynamicFlexGrid {...dynamicGridProps}>
         {data4.map((e) => (
           <ImgCard key={e} title={e} description={e} />
         ))}
-      </DynamicGrid>
+      </DynamicFlexGrid>
       <Box p={5} />
-      <DynamicGrid {...dynamicGridProps}>
+      <DynamicFlexGrid {...dynamicGridProps}>
         {data5.map((e) => (
           <ImgCard key={e} title={e} description={e} />
         ))}
-      </DynamicGrid>
+      </DynamicFlexGrid>
     </Container>
   );
 };
